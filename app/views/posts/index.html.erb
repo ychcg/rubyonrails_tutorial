@@ -1,0 +1,36 @@
+<a href="/posts/new">새 글 작성</a>
+<hr/>
+<table border="1">
+    <tr>
+        <th>id</th>
+        <th>제목</th>
+        <th>내용</th>
+        <th>생성일</th>
+        <th>수정일</th>
+        <th>링크</th>
+    </tr>
+    <% @posts.each do |post| %>
+        <tr>
+            <td>
+                <%= post.id%>
+            </td>
+            <td>
+                <%= post.title %>
+            </td>
+            <td>
+                <%= post.content %>
+            </td>
+            <td>
+                <%= post.created_at %>
+            </td>
+            <td>
+                <%= post.updated_at %>
+            </td>
+            <td>
+                <a href="/posts/show/<%= post.id %>">보기</a>
+                <a href="/posts/edit/<%= post.id %>">수정</a>
+                <a href="/posts/delete/<%= post.id %>">삭제</a>
+            </td>
+        </tr>
+    <% end %>
+</table>

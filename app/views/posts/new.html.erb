@@ -1,0 +1,12 @@
+<h4>
+	새 글 작성
+</h4>
+<form action="/posts/create" method="POST">
+	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+	<input type="text" name="title">
+	<br/>
+	<textarea name="content"></textarea>
+	<button>
+		제출
+	</button>
+</form>
